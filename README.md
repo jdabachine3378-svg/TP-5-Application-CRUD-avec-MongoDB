@@ -15,14 +15,14 @@ Application web complète implémentant les opérations CRUD (Create, Read, Upda
 
 ## Fonctionnalités
 
-- ✅ Création, lecture, mise à jour et suppression de produits
-- ✅ Pagination des résultats
-- ✅ Filtrage par catégorie, stock, prix
-- ✅ Recherche textuelle
-- ✅ Tri des produits
-- ✅ Validation des données
-- ✅ API REST pour l'accès programmatique
-- ✅ Interface utilisateur moderne avec Bootstrap
+-  Création, lecture, mise à jour et suppression de produits
+-  Pagination des résultats
+- Filtrage par catégorie, stock, prix
+-  Recherche textuelle
+-  Tri des produits
+-  Validation des données
+-  API REST pour l'accès programmatique
+- Interface utilisateur moderne avec Bootstrap
 
 ## Installation
 
@@ -77,6 +77,7 @@ npm run dev
 ```
 
 L'application sera accessible à l'adresse : **http://localhost:3000**
+![Capture d’écran_9-1-2026_12133_localhost](https://github.com/user-attachments/assets/8f689c0e-a112-4f9c-af25-6a2911aca774)
 
 ## Structure du projet
 
