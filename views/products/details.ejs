@@ -1,0 +1,76 @@
+<%- include('../partials/header') %>
+
+<!-- Vue des détails d'un produit -->
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h2><%= product.name %></h2>
+                <div>
+                    <a href="/products/<%= product._id %>/edit" class="btn btn-warning btn-sm">Modifier</a>
+                    <a href="/products" class="btn btn-secondary btn-sm">Retour</a>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row mb-3">
+                    <div class="col-sm-4"><strong>Catégorie:</strong></div>
+                    <div class="col-sm-8">
+                        <span class="badge bg-primary"><%= product.category %></span>
+                    </div>
+                </div>
+                
+                <div class="row mb-3">
+                    <div class="col-sm-4"><strong>Prix:</strong></div>
+                    <div class="col-sm-8"><%= product.formattedPrice %></div>
+                </div>
+                
+                <div class="row mb-3">
+                    <div class="col-sm-4"><strong>Stock:</strong></div>
+                    <div class="col-sm-8">
+                        <% if (product.inStock) { %>
+                            <span class="badge bg-success">En stock</span> (<%= product.quantity %> unités)
+                        <% } else { %>
+                            <span class="badge bg-danger">Rupture de stock</span>
+                        <% } %>
+                    </div>
+                </div>
+                
+                <% if (product.description) { %>
+                    <div class="row mb-3">
+                        <div class="col-sm-4"><strong>Description:</strong></div>
+                        <div class="col-sm-8"><%= product.description %></div>
+                    </div>
+                <% } %>
+                
+                <% if (product.tags && product.tags.length > 0) { %>
+                    <div class="row mb-3">
+                        <div class="col-sm-4"><strong>Tags:</strong></div>
+                        <div class="col-sm-8">
+                            <% product.tags.forEach(tag => { %>
+                                <span class="badge bg-info me-1"><%= tag %></span>
+                            <% }); %>
+                        </div>
+                    </div>
+                <% } %>
+                
+                <div class="row mb-3">
+                    <div class="col-sm-4"><strong>Créé le:</strong></div>
+                    <div class="col-sm-8"><%= new Date(product.createdAt).toLocaleDateString('fr-FR') %></div>
+                </div>
+                
+                <div class="row mb-3">
+                    <div class="col-sm-4"><strong>Modifié le:</strong></div>
+                    <div class="col-sm-8"><%= new Date(product.updatedAt).toLocaleDateString('fr-FR') %></div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <form method="POST" action="/products/<%= product._id %>/delete" style="display: inline;">
+                    <button type="submit" class="btn btn-danger" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce produit ?')">Supprimer</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('../partials/footer') %>
+

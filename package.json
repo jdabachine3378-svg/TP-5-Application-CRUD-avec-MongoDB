@@ -1,0 +1,14 @@
+{
+  "name": "crud-express-mongodb",
+  "version": "1.0.0",
+  "description": "Application CRUD avec Express, MongoDB et Mongoose",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": ["express", "mongodb", "mongoose", "crud"],
+  "author": "",
+  "license": "ISC"
+}
+
